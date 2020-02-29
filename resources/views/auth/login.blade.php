@@ -1,11 +1,16 @@
-@extends('layouts.app')
+@extends('layout')
+
+@section('title')
+    Login - Weather app
+@endsection
+
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-150 mb-150">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header bg-dark text-white">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
