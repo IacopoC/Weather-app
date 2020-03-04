@@ -24,8 +24,8 @@
             <div class="col-md-8 mb-5">
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                 <hr>
-                 @foreach($weather_data->daily as $weather_day => $weather_val)
-                      {{ var_dump($weather_val) }}
+                 @foreach($weather_data->daily as $weather_day)
+                      {{ var_dump($weather_day) }}
                      @endforeach
             </div>
             <div class="col-md-4 mb-5">
