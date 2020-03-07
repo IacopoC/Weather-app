@@ -24,9 +24,25 @@
             <div class="col-md-8 mb-5">
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                 <hr>
-                 @foreach($weather_data->daily as $weather_day)
-                      {{ var_dump($weather_day) }}
-                     @endforeach
+                Timezone: {{ $weather_data->timezone }}
+                <div class="mt-4 mb-4">
+                    <div class="bg-light p-4">
+                        <h3> Weather now:</h3>
+                            <h4>Summary of the day: {{ $weather_data->currently->summary }}</h4>
+                            <h4>Icon: {{ $weather_data->currently->icon }}</h4>
+                    </div>
+                </div>
+                <div class="p-4">
+                <h3>Weather for the week:</h3>
+                    <p>Summary of the week: {{ $weather_data->daily->summary }}</p>
+                <hr>
+                @foreach($weather_data->daily->data as $weather_day)
+                    <p>Time: {{ $weather_day->time }}</p>
+                    <p>Summary: {{ $weather_day->summary }}</p>
+                    <p>Icon: {{ $weather_day->icon }}</p>
+                    <hr>
+                    @endforeach
+                </div>
             </div>
             <div class="col-md-4 mb-5">
 
