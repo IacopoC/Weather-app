@@ -29,7 +29,7 @@
                     <div class="bg-light p-4">
                         <h3> Weather now:</h3>
                             <h4>Summary of the day: {{ $weather_data->currently->summary }}</h4>
-                            <h4>Icon: {{ $weather_data->currently->icon }}</h4>
+                            <p>{{ $weather_data->currently->icon }}</p>
                     </div>
                 </div>
                 <div class="p-4">
@@ -39,7 +39,7 @@
                 @foreach($weather_data->daily->data as $weather_day)
                     <p>Time: {{ $weather_day->time }}</p>
                     <p>Summary: {{ $weather_day->summary }}</p>
-                    <p>Icon: {{ $weather_day->icon }}</p>
+                        <p>{{ $weather_day->icon }}</p>
                     <hr>
                     @endforeach
                 </div>
