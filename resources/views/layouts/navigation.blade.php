@@ -12,6 +12,10 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('/forecast') }}">Forecast
+                    </a>
+                </li>
                 @if (Route::has('login'))
                     <li class="nav-item">
                         @auth

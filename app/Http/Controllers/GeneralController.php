@@ -17,7 +17,7 @@ class GeneralController extends Controller
 
         $weather_data = $this->basetype->getDefaultWeather();
 
-        return view('welcome', compact( 'weather_data'));
+        return view('forecast', compact( 'weather_data'));
     }
 
 
