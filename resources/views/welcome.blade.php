@@ -11,7 +11,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
                     <h1 class="display-4 text-white mt-5 mb-2">Welcome to Weather app</h1>
-                    <p class="lead mb-5 text-white-50">Discover forecast in your <a class="text-white" href="#">location</a></p>
+                    <p class="lead mb-5 text-white-50">Discover forecast in your <a class="text-white" id="geolocation" href="#">location</a></p>
                     <form class="form-inline mt-2 mt-md-0">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -33,6 +33,21 @@
                 <li>Search weather in any part of the world</li>
                 <li>Register to unlock more features and save your weather locations</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+                <div class="location">
+                    <p class="location-timezone"></p>
+                </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="temperature-degree"></p>
+                    <p class="temperature-description"></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="pressure-degree"></p>
+                    <p class="uvindex-degree"></p>
                 </div>
             </div>
         </div>
