@@ -37,13 +37,16 @@
             </div>
         </div>
         <div class="col-lg-12">
+
+            <h3 id="title-currentw" class="d-none">Current Weather</h3>
                 <div class="location">
                     <p class="location-timezone"></p>
                 </div>
+                <p class="temperature-description"></p>
             <div class="row">
                 <div class="col-md-6">
                     <p class="temperature-degree"></p>
-                    <p class="temperature-description"></p>
+                    <p class="rain-prob"></p>
                 </div>
                 <div class="col-md-6">
                     <p class="pressure-degree"></p>

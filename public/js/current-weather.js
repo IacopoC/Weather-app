@@ -1,6 +1,13 @@
+function showTitle() {
+    let element = document.getElementById("title-currentw");
+    element.classList.remove("d-none");
+}
+
 document.getElementById("geolocation").addEventListener('click', function() {
     let long;
     let lat;
+
+    let rainProb = document.querySelector('.rain-prob');
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let pressureDegree = document.querySelector('.pressure-degree');
@@ -12,7 +19,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
             long = position.coords.longitude;
             lat = position.coords.latitude;
 
-            const api_key = `127984c3a1de4f4c861f0f9bab4fe831`;
+            const api_key = weather_api_key;
             const proxy = `https://cors-anywhere.herokuapp.com/`;
             const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${lat},${long}?units=si`;
             fetch(api)
@@ -21,14 +28,17 @@ document.getElementById("geolocation").addEventListener('click', function() {
                 })
                 .then(data => {
                     console.log(data) ;
-                    const {temperature,summary,pressure,uvIndex} = data.currently;
+                    const {temperature,summary,pressure,uvIndex, precipProbability} = data.currently;
                     const location = data.timezone;
 
-                    indexDegree.textContent = uvIndex + ' uvIndex';
-                    pressureDegree.textContent = pressure + ' mb';
-                    temperatureDegree.textContent = temperature + ' C°';
-                    temperatureDescription.textContent = summary;
-                    locationTimezone.textContent = 'Timezone: ' + location;
+                    showTitle();
+
+                    rainProb.textContent = `Rain prob: ${precipProbability} %`;
+                    indexDegree.textContent = `Uv Index ${uvIndex}`;
+                    pressureDegree.textContent = `Pressure: ${pressure} mb`;
+                    temperatureDegree.textContent = `Temp: ${temperature} C°`;
+                    temperatureDescription.textContent = `Current summary: ${summary}`;
+                    locationTimezone.textContent = `Timezone: ${location}`;
 
 
                 })
