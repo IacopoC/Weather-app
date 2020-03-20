@@ -34,7 +34,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     showTitle();
 
                     rainProb.textContent = `Rain prob: ${precipProbability} %`;
-                    indexDegree.textContent = `Uv Index ${uvIndex}`;
+                    indexDegree.textContent = `Uv Index: ${uvIndex}`;
                     pressureDegree.textContent = `Pressure: ${pressure} mb`;
                     temperatureDegree.textContent = `Temp: ${temperature} C°`;
                     temperatureDescription.textContent = `Current summary: ${summary}`;

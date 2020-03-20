@@ -8,6 +8,8 @@
 
     <title>@yield('title')</title>
 
+    <script src="https://kit.fontawesome.com/e68e78dc62.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 

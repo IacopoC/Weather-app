@@ -10,8 +10,8 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2">Welcome to Weather app</h1>
-                    <p class="lead mb-5 text-white-50">Discover forecast in your <a class="text-white" id="geolocation" href="#">location</a></p>
+                    <h1 class="display-4 text-white mt-5 mb-2">Welcome to Weather app <i class="fas fa-cloud-sun-rain"></i></h1>
+                    <p class="lead mb-5 text-white-50">Discover forecast in your <a class="text-white" id="geolocation" href="#">location <span class="ml-1 p-2 text-primary bg-white rounded-circle"><i class="fas fa-location-arrow"></i></span></a></p>
                     <form class="form-inline mt-2 mt-md-0">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -39,10 +39,12 @@
         <div class="col-lg-12">
 
             <h3 id="title-currentw" class="d-none">Current Weather</h3>
-                <div class="location">
-                    <p class="location-timezone"></p>
+                <div class="pt-3 location">
+                    <h5 class="location-timezone"></h5>
                 </div>
+            <div class="pt-3">
                 <p class="temperature-description"></p>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <p class="temperature-degree"></p>
