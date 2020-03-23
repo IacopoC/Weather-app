@@ -30,4 +30,11 @@ class BaseType extends Controller
     {
         return $this->buildCall('42.3601', '-71.0589');
     }
+
+    public function searchWeather($query)
+    {
+         $weather_coordinates = $this->service->callSearchWeather($query);
+
+         return $this->buildCall($weather_coordinates['lat'], $weather_coordinates['lng']);
+    }
 }

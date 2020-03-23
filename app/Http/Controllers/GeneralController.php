@@ -23,7 +23,10 @@ class GeneralController extends Controller
 
     public function search()
     {
+        $query = $_GET['q'];
+        $weather_results = $this->basetype->searchWeather($query);
 
+        return view('search', compact('weather_results'));
     }
 
 }

@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/forecast', 'GeneralController@index');
 
+Route::get('/search', 'GeneralController@search');
+
 Route::get('/home', 'HomeController@index')->name('home');

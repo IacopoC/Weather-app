@@ -4,6 +4,7 @@ namespace App\Http\weatherapi;
 
 use GuzzleHttp\Client;
 
+use Spatie\Geocoder\Geocoder;
 
 class WeatherApi
 {
@@ -29,11 +30,13 @@ class WeatherApi
     }
 
 
-    public function callSearchWeather($method, $url, $search_res)
+    public function callSearchWeather($query)
     {
-       /*
-        $body_results = $results->getBody();
-        return json_decode($body_results); */
+        $geocoder = new Geocoder($this->client);
+        $geocoder->setApiKey(config('geocoder.key'));
+        $geocoder->setCountry(config('geocoder.country', 'IT'));
+         return $geocoder->getCoordinatesForAddress($query);
+
     }
 }
 

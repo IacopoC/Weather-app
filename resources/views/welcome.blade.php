@@ -12,8 +12,8 @@
                 <div class="col-lg-12">
                     <h1 class="display-4 text-white mt-5 mb-2">Welcome to Weather app <i class="fas fa-cloud-sun-rain"></i></h1>
                     <p class="lead mb-5 text-white-50">Discover forecast in your <a class="text-white" id="geolocation" href="#">location <span class="ml-1 p-2 text-primary bg-white rounded-circle"><i class="fas fa-location-arrow"></i></span></a></p>
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <form class="form-inline mt-2 mt-md-0" action="{{ url('/search') }}">
+                        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
