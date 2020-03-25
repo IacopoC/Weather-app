@@ -21,7 +21,7 @@ class BaseType extends Controller
 
     private function buildCall($lat, $long)
     {
-        $string = $this->baseUrl . '/forecast/' . $this->api_key . '/' . $lat . ',' . $long . '?units=si';
+        $string = $this->baseUrl . '/forecast/' . $this->api_key . '/' . $lat . ',' . $long . '?units=si&lang=it';
 
         return $this->service->callWeather('get', $this->baseUrl . $string);
     }

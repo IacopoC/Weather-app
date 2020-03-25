@@ -21,12 +21,12 @@ class GeneralController extends Controller
     }
 
 
-    public function search()
+    public function search(Request $request)
     {
-        $query = $_GET['q'];
+        $query = $request->input('q');
         $weather_results = $this->basetype->searchWeather($query);
 
-        return view('search', compact('weather_results'));
+        return view('search', compact('weather_results','query'));
     }
 
 }
