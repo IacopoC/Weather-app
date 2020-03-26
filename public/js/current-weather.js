@@ -13,6 +13,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let pressureDegree = document.querySelector('.pressure-degree');
     let locationTimezone = document.querySelector('.location-timezone');
     let indexDegree = document.querySelector('.uvindex-degree');
+    let dailySummary = document.querySelector('.daily-summary');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -27,7 +28,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data);
+
                     const {temperature,summary,pressure,uvIndex, precipProbability} = data.currently;
                     const location = data.timezone;
 
@@ -40,7 +41,10 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     temperatureDescription.textContent = `Sommario: ${summary}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
 
-                   // data.daily.data.forEach(summary => console.log(summary));
+                    data.daily.data.forEach(function (data) {
+                        console.log(data);
+                        dailySummary.innerHTML += `Sommario: ${data['summary']} Pressione: ${data['pressure']} Umidità: ${data['humidity']} Vento: ${data['windSpeed']} km/h`;
+                    });
 
 
                 })

@@ -53,8 +53,9 @@
                     <p class="pressure-degree"></p>
                     <p class="uvindex-degree"></p>
                 </div>
-                <div class="col-md-12">
-                    <p class="daily-summary"></p>
+                <div class="col-md-12 pt-3">
+                    <div class="daily-summary">
+                    </div>
                 </div>
             </div>
     </div>
