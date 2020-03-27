@@ -43,7 +43,11 @@ document.getElementById("geolocation").addEventListener('click', function() {
 
                     data.daily.data.forEach(function (data) {
                         console.log(data);
-                        dailySummary.innerHTML += `Sommario: ${data['summary']} Pressione: ${data['pressure']} Umidità: ${data['humidity']} Vento: ${data['windSpeed']} km/h`;
+                        let timeDate = data['time'];
+
+                       dailySummary.innerHTML += "<div class='pt-4'><p>" + timeDate + "</p><p>Sommario: " + data['summary'] +
+                             "</p><p>Pressione: " + data['pressure'] + "</p><p>Umidità: " + data['humidity'] +
+                             "</p><p>Vento: " + data['windSpeed'] + "km/h</p></div>";
                     });
 
 
