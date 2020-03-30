@@ -1,3 +1,16 @@
+function timeConverter(UNIX_timestamp){
+
+    let a = new Date(UNIX_timestamp * 1000);
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let time = date + ' ' + month + ' ' + year;
+    return time;
+}
+
+
+
 function showTitle() {
     let element = document.getElementById("title-currentw");
     element.classList.remove("d-none");
@@ -45,7 +58,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
                         console.log(data);
                         let timeDate = data['time'];
 
-                       dailySummary.innerHTML += "<div class='pt-4'><p>" + timeDate + "</p><p>Sommario: " + data['summary'] +
+                       dailySummary.innerHTML += "<div class='pt-4'><p><strong>" + timeConverter(timeDate) + "</strong></p><p>Sommario: " + data['summary'] +
                              "</p><p>Pressione: " + data['pressure'] + "</p><p>Umidità: " + data['humidity'] +
                              "</p><p>Vento: " + data['windSpeed'] + "km/h</p></div>";
                     });
