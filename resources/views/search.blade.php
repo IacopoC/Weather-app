@@ -68,6 +68,8 @@
             </div>
         </div>
         <!-- /.row -->
+            @else
+            <p>Risultati non disponibili per il termine cercato</p>
     @endif
 
     </div>
