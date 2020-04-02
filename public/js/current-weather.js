@@ -27,6 +27,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let locationTimezone = document.querySelector('.location-timezone');
     let indexDegree = document.querySelector('.uvindex-degree');
     let dailySummary = document.querySelector('.daily-summary');
+    let titleDaily = document.querySelector('.title-week');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -51,18 +52,18 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     indexDegree.textContent = `Indice Uv: ${uvIndex}`;
                     pressureDegree.textContent = `Pressione: ${pressure} mb`;
                     temperatureDegree.textContent = `Temp: ${temperature} C°`;
-                    temperatureDescription.textContent = `Sommario: ${summary}`;
+                    temperatureDescription.textContent = `${summary}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
+                    titleDaily.textContent = `Tempo della settimana`;
 
                     data.daily.data.forEach(function (data) {
                         console.log(data);
                         let timeDate = data['time'];
 
-                       dailySummary.innerHTML += "<div class='pt-4'><p><strong>" + timeConverter(timeDate) + "</strong></p><p>Sommario: " + data['summary'] +
+                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3 bg-light'><p><strong>" + timeConverter(timeDate) + "</strong></p><p> " + data['summary'] +
                              "</p><p>Pressione: " + data['pressure'] + "</p><p>Umidità: " + data['humidity'] +
                              "</p><p>Vento: " + data['windSpeed'] + "km/h</p></div>";
                     });
-
 
                 })
                 .catch(error => console.log("Si è verificato un errore"))

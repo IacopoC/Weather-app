@@ -35,7 +35,7 @@
         </div>
              <div class="row">
                  <div class="col-md-12">
-            <h3 id="title-currentw" class="d-none">Il tempo adesso:</h3>
+            <h3 id="title-currentw" class="d-none">Il tempo adesso</h3>
                 <div class="pt-3 location">
                     <h5 class="location-timezone"></h5>
                 </div>
@@ -54,10 +54,15 @@
                     <p class="uvindex-degree"></p>
                 </div>
             </div>
-             <div class="row pt-3">
-                    <div class="daily-summary">
-                    </div>
+        <div class="row pt-3">
+            <div class="col-md-12">
+            <h3 class="title-week"></h3>
+            </div>
+        </div>
+             <div class="row pt-3 daily-summary">
+
             </div>
     </div>
     <!-- /.container -->
+    <script src="{{ asset('js/current-weather.js') }}"></script>
     @endsection
