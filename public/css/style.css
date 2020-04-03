@@ -22,3 +22,7 @@ body {
 .mb-130 {
     margin-bottom:130px;
 }
+
+button.ap-input-icon.ap-icon-pin {
+    display: none;
+}
