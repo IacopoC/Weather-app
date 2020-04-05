@@ -5,5 +5,6 @@
 <script src="{{asset('js/jquery/jquery.min.js')}}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{asset('js/empty-field.js')}}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{asset('js/search-city.js')}}"></script>
 
