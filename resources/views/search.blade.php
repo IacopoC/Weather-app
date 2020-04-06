@@ -10,7 +10,7 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2">Il tempo a {{ $query }}</h1>
+                    <h1 class="display-4 text-white mt-5 mb-2">Il tempo a {{ $query }} <i class="fas fa-cloud-sun-rain"></i></h1>
                     <p class="lead mb-5 text-white-50"></p>
                     @include('layouts/search-bar')
                 </div>
