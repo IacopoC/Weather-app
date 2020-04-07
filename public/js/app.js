@@ -47511,7 +47511,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
+window.places = __webpack_require__(/*! places.js */ "./node_modules/places.js/index.js");
 
 /***/ }),
 

@@ -60,9 +60,9 @@ document.getElementById("geolocation").addEventListener('click', function() {
                         console.log(data);
                         let timeDate = data['time'];
 
-                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3 bg-light'><p><strong>" + timeConverter(timeDate) + "</strong></p><p> " + data['summary'] +
-                             "</p><p>Pressione: " + data['pressure'] + "</p><p>Umidità: " + data['humidity'] +
-                             "</p><p>Vento: " + data['windSpeed'] + "km/h</p></div>";
+                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p><p> " + data['summary'] +
+                             "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + data['humidity'] +
+                             " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
                     });
 
                 })

@@ -10,7 +10,7 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2">Il tempo a {{ $query }} <i class="fas fa-cloud-sun-rain"></i></h1>
+                    <h1 class="display-4 text-white mt-5 mb-2">Il tempo a: {{ $query }} <i class="fas fa-cloud-sun-rain"></i></h1>
                     <p class="lead mb-5 text-white-50"></p>
                     @include('layouts/search-bar')
                 </div>
@@ -32,13 +32,13 @@
                         <p>{{ $weather_results->currently->summary }}</p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 bg-light pt-2">
+                            <div class="col-md-6 pt-2">
                                 <p>Pioggia: {{ $weather_results->currently->precipProbability }} %</p>
                                 <p>Temp: {{ $weather_results->currently->temperature }} C°</p>
                                 <p>Indice Uv: {{ $weather_results->currently->uvIndex }}</p>
                             </div>
-                            <div class="col-md-6 bg-light pt-2">
-                                <p>Umidità: {{ $weather_results->currently->humidity }} %</p>
+                            <div class="col-md-6 pt-2">
+                                <p>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_results->currently->pressure }} mb</p>
                                 <p>Visibilità: {{ $weather_results->currently->uvIndex }}</p>
                             </div>
@@ -51,12 +51,12 @@
                     <hr>
                     <div class="row">
                     @foreach($weather_results->daily->data as $weather_day)
-                            <div class="col-md-3 pt-4 bg-light">
+                            <div class="col-md-3 pt-4">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                         <p>{{ $weather_day->summary }}</p>
                                 <p>Pioggia: {{ $weather_day->precipProbability }} %</p>
                                 <p>Temp: {{ $weather_day->temperatureMin }} / {{ $weather_day->temperatureMax }} C°</p>
-                                <p>Umidità: {{ $weather_day->humidity }} %</p>
+                                <p>Umidità: {{ substr($weather_day->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_day->pressure }} mb</p>
                             </div>
                     @endforeach

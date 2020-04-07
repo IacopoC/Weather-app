@@ -1,2 +1,2 @@
 require('./bootstrap');
-require('places.js');
+window.places = require('places.js');

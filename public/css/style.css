@@ -26,3 +26,7 @@ body {
 button.ap-input-icon.ap-icon-pin {
     display: none;
 }
+
+.algolia-places {
+    width: 90%;
+}
