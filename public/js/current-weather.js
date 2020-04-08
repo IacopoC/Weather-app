@@ -57,11 +57,12 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     titleDaily.textContent = `Tempo della settimana`;
 
                     data.daily.data.forEach(function (data) {
-                        console.log(data);
                         let timeDate = data['time'];
+                        let hum = data['humidity'];
+                        let hum_str = hum.toString();
 
                        dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p><p> " + data['summary'] +
-                             "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + data['humidity'] +
+                             "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
                              " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
                     });
 
