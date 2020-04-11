@@ -28,6 +28,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let indexDegree = document.querySelector('.uvindex-degree');
     let dailySummary = document.querySelector('.daily-summary');
     let titleDaily = document.querySelector('.title-week');
+    let iconCurrently = document.querySelector('.icon');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -43,7 +44,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
                 })
                 .then(data => {
 
-                    const {temperature,summary,pressure,uvIndex, precipProbability} = data.currently;
+                    const {temperature,summary,pressure,uvIndex, precipProbability,icon} = data.currently;
                     const location = data.timezone;
 
                     showTitle();
@@ -55,13 +56,14 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     temperatureDescription.textContent = `${summary}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
                     titleDaily.textContent = `Tempo della settimana`;
+                    iconCurrently.innerHTML = "<canvas id=" + icon + " width=\"64\" height=\"64\"></canvas>";
 
                     data.daily.data.forEach(function (data) {
                         let timeDate = data['time'];
                         let hum = data['humidity'];
                         let hum_str = hum.toString();
 
-                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p><p> " + data['summary'] +
+                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p><canvas id=" + data['icon'] +" width=\"64\" height=\"64\"></canvas><p> " + data['summary'] +
                              "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
                              " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
                     });

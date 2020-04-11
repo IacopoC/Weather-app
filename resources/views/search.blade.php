@@ -29,6 +29,7 @@
                 <div class="mt-4 mb-4">
                     <div class="p-4">
                         <h3> Il tempo adesso</h3>
+                        <canvas id="{{ $weather_results->currently->icon }}" width="64" height="64"></canvas>
                         <p>{{ $weather_results->currently->summary }}</p>
                         <hr>
                         <div class="row">
@@ -53,6 +54,7 @@
                     @foreach($weather_results->daily->data as $weather_day)
                             <div class="col-md-3 pt-4">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
+                                <canvas id="{{ $weather_day->icon }}" width="64" height="64"></canvas>
                         <p>{{ $weather_day->summary }}</p>
                                 <p>Pioggia: {{ $weather_day->precipProbability }} %</p>
                                 <p>Temp: {{ $weather_day->temperatureMin }} / {{ $weather_day->temperatureMax }} C°</p>

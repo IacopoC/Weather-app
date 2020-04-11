@@ -40,6 +40,8 @@
                     <h5 class="location-timezone"></h5>
                 </div>
             <div class="pt-3">
+                <div class="icon">
+                </div>
                 <p class="temperature-description"></p>
             </div>
                  </div>
