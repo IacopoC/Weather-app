@@ -63,7 +63,8 @@ document.getElementById("geolocation").addEventListener('click', function() {
                         let hum = data['humidity'];
                         let hum_str = hum.toString();
 
-                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p><canvas class=" + data['icon'] +" width=\"64\" height=\"64\"></canvas><p> " + data['summary'] +
+                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) +
+                             "</strong></p><canvas class=" + data['icon'] +" width=\"64\" height=\"64\"></canvas><p> " + data['summary'] +
                              "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
                              " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
                     });
