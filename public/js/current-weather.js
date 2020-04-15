@@ -1,15 +1,3 @@
-function timeConverter(UNIX_timestamp){
-
-    let a = new Date(UNIX_timestamp * 1000);
-    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    let year = a.getFullYear();
-    let month = months[a.getMonth()];
-    let date = a.getDate();
-    let time = date + ' ' + month + ' ' + year;
-    return time;
-}
-
-
 
 function showTitle() {
     let element = document.getElementById("title-currentw");
@@ -26,7 +14,6 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let pressureDegree = document.querySelector('.pressure-degree');
     let locationTimezone = document.querySelector('.location-timezone');
     let indexDegree = document.querySelector('.uvindex-degree');
-    let dailySummary = document.querySelector('.daily-summary');
     let titleDaily = document.querySelector('.title-week');
 
     if(navigator.geolocation) {
@@ -55,23 +42,6 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     temperatureDescription.textContent = `${summary}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
                     titleDaily.textContent = `Tempo della settimana`;
-
-                    data.daily.data.forEach(function (data) {
-                        let timeDate = data['time'];
-                        let hum = data['humidity'];
-                        let hum_str = hum.toString();
-
-                        let create_div = document.createElement("div");
-                        create_div.className = "pt-4 pb-4 mb-3 col-md-3";
-                        let create_content = document.createTextNode(data['summary']);
-                        create_div.appendChild(create_content);
-                        let element = document.getElementById("daily-sum");
-                        element.appendChild(create_div);
-
-                     /*  dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) +
-                             "</strong></p><p> " + data['summary'] + "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
-                             " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>"; */
-                    });
 
                 })
                 .catch(error => console.log("Si è verificato un errore"))

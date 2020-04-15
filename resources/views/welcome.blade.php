@@ -56,13 +56,6 @@
                     <p class="uvindex-degree"></p>
                 </div>
             </div>
-        <div class="row pt-3">
-            <div class="col-md-12">
-            <h3 class="title-week"></h3>
-            </div>
-        </div>
-             <div class="row pt-3 daily-summary" id="daily-sum">
-            </div>
     </div>
     <!-- /.container -->
     <script src="{{ asset('js/current-weather.js') }}"></script>
