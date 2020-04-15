@@ -61,8 +61,7 @@
             <h3 class="title-week"></h3>
             </div>
         </div>
-             <div class="row pt-3 daily-summary">
-
+             <div class="row pt-3 daily-summary" id="daily-sum">
             </div>
     </div>
     <!-- /.container -->

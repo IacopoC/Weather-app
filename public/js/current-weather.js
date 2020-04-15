@@ -28,7 +28,6 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let indexDegree = document.querySelector('.uvindex-degree');
     let dailySummary = document.querySelector('.daily-summary');
     let titleDaily = document.querySelector('.title-week');
-    let iconCurrently = document.querySelector('.icon');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -56,17 +55,22 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     temperatureDescription.textContent = `${summary}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
                     titleDaily.textContent = `Tempo della settimana`;
-                    iconCurrently.innerHTML = "<canvas class=" + icon + " width=\"64\" height=\"64\"></canvas>";
 
                     data.daily.data.forEach(function (data) {
                         let timeDate = data['time'];
                         let hum = data['humidity'];
                         let hum_str = hum.toString();
 
-                       dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) +
-                             "</strong></p><canvas class=" + data['icon'] +" width=\"64\" height=\"64\"></canvas><p> " + data['summary'] +
-                             "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
-                             " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
+                        let create_div = document.createElement("div");
+                        create_div.className = "pt-4 pb-4 mb-3 col-md-3";
+                        let create_content = document.createTextNode(data['summary']);
+                        create_div.appendChild(create_content);
+                        let element = document.getElementById("daily-sum");
+                        element.appendChild(create_div);
+
+                     /*  dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) +
+                             "</strong></p><p> " + data['summary'] + "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
+                             " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>"; */
                     });
 
                 })
