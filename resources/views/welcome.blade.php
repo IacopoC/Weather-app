@@ -11,7 +11,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
                     <h1 class="display-4 text-white mt-5 mb-2">Benvenuto in Weather app</h1>
-                    <p class="lead mb-5 text-white">Scopri il tempo nella tua località <button type="button" class="btn btn-link text-white p-2" id="geolocation">Geo</button></p>
+                    <p class="lead mb-5 text-white">Scopri il tempo nella tua località <button type="button" class="btn btn-link text-white" id="geolocation"><img src="{{ asset('img/geolocation.png') }}" width="30px"></button></p>
                     @include('layouts/search-bar')
                 </div>
             </div>
@@ -20,6 +20,36 @@
 
     <!-- Page Content -->
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="title-currentw" class="d-none">Il tempo adesso</h3>
+                <div class="pt-3 location">
+                    <h5 class="location-timezone"></h5>
+                </div>
+                <div class="pt-3">
+                    <div class="icon">
+                    </div>
+                    <p class="temperature-description"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="temperature-degree"></p>
+                <p class="rain-prob"></p>
+            </div>
+            <div class="col-md-6">
+                <p class="pressure-degree"></p>
+                <p class="uvindex-degree"></p>
+            </div>
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-12">
+                <h3 class="title-week"></h3>
+            </div>
+        </div>
+        <div class="row pt-4 daily-summary">
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="pt-2">Una semplice applicazione per il meteo</h2>
@@ -33,29 +63,6 @@
                 </div>
             </div>
         </div>
-             <div class="row">
-                 <div class="col-md-12">
-            <h3 id="title-currentw" class="d-none">Il tempo adesso</h3>
-                <div class="pt-3 location">
-                    <h5 class="location-timezone"></h5>
-                </div>
-            <div class="pt-3">
-                <div class="icon">
-                </div>
-                <p class="temperature-description"></p>
-            </div>
-                 </div>
-             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="temperature-degree"></p>
-                    <p class="rain-prob"></p>
-                </div>
-                <div class="col-md-6">
-                    <p class="pressure-degree"></p>
-                    <p class="uvindex-degree"></p>
-                </div>
-            </div>
     </div>
     <!-- /.container -->
     <script src="{{ asset('js/current-weather.js') }}"></script>
