@@ -19,7 +19,7 @@
     </header>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container d-none" id="container-current">
         <div class="row">
             <div class="col-md-12">
                 <h3 id="title-currentw" class="d-none">Il tempo adesso</h3>
@@ -27,7 +27,8 @@
                     <h5 class="location-timezone"></h5>
                 </div>
                 <div class="pt-3">
-                    <div class="icon">
+                    <div class="icons">
+                        <canvas class="icon1" height="60" width="60"></canvas>
                     </div>
                     <p class="temperature-description"></p>
                 </div>
@@ -50,6 +51,8 @@
         </div>
         <div class="row pt-4 daily-summary">
         </div>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="pt-2">Una semplice applicazione per il meteo</h2>

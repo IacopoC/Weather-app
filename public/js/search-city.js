@@ -10,7 +10,6 @@
             }
         }
     }).configure({
-        type: 'city',
-        aroundLatLngViaIP: false,
+        type: 'city'
     });
 })();

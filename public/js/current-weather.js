@@ -9,6 +9,11 @@ function timeConverter(UNIX_timestamp){
     return time;
 }
 
+function showContainer() {
+    let element = document.getElementById("container-current");
+    element.classList.remove("d-none");
+}
+
 function showTitle() {
     let element = document.getElementById("title-currentw");
     element.classList.remove("d-none");
@@ -26,6 +31,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let indexDegree = document.querySelector('.uvindex-degree');
     let dailySummary = document.querySelector('.daily-summary');
     let titleDaily = document.querySelector('.title-week');
+    let iconCurrently = document.querySelector('.icons');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -41,10 +47,14 @@ document.getElementById("geolocation").addEventListener('click', function() {
                 })
                 .then(data => {
 
+                    showContainer();
+
                     const {temperature,summary,pressure,uvIndex, precipProbability,icon} = data.currently;
                     const location = data.timezone;
 
                     showTitle();
+
+                    setIcons(icon, document.getElementsByClassName("icon1")[0]);
 
                     rainProb.textContent = `Pioggia: ${precipProbability} %`;
                     indexDegree.textContent = `Indice Uv: ${uvIndex}`;
@@ -71,3 +81,10 @@ document.getElementById("geolocation").addEventListener('click', function() {
         alert('Non hai accesso alla geolocalizzazione');
     }
 });
+
+function setIcons(icon, iconID) {
+    const skycons = new Skycons({"monochrome": false});
+    const currentIcon = icon.replace(/-/g,"_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
+}
