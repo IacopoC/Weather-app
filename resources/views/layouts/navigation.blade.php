@@ -12,17 +12,13 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item {{ Request::path() === 'forecast' ? 'active': '' }}">
-                    <a class="nav-link" href="{{ url('/forecast') }}">Forecast
-                    </a>
-                </li>
                 @guest
                     <li class="nav-item {{ Request::path() === 'login' ? 'active': '' }}">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item {{ Request::path() === 'register' ? 'active': '' }}">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                     @endif
                 @else

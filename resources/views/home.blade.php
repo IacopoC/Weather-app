@@ -16,15 +16,9 @@
         </div>
     </header>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 mt-150 mb-150">
-
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-            </div>
-        </div>
+    <div class="col-md-12">
+        <h3>Profilo {{ Auth::user()->name }}</h3>
+        <p>Email: {{ Auth::user()->email }}</p>
+    </div>
 </div>
 @endsection

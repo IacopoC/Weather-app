@@ -11,7 +11,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
                     <h1 class="display-4 text-white mt-5 mb-2">Benvenuto in Weather app</h1>
-                    <p class="lead mb-5 text-white">Scopri il tempo nella tua località <button type="button" class="btn btn-link text-white" id="geolocation"><img src="{{ asset('img/geolocation.png') }}" width="30px"></button></p>
+                    <p class="lead mb-5 text-white">Scopri il tempo nella tua località <button type="button" class="btn btn-link text-white" id="geolocation"><img src="{{ asset('img/geolocation.png') }}"></button></p>
                     @include('layouts/search-bar')
                 </div>
             </div>

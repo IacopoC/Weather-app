@@ -34,3 +34,11 @@ button.ap-input-icon.ap-icon-pin {
 .gradient-secondary, .gradient-blue {
     background-image: linear-gradient(256deg,#00aeff,#3369e7)!important;
 }
+
+#geolocation {
+    margin-bottom:20px;
+}
+
+#geolocation img {
+    width:20px;
+}
