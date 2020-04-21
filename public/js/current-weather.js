@@ -31,7 +31,6 @@ document.getElementById("geolocation").addEventListener('click', function() {
     let indexDegree = document.querySelector('.uvindex-degree');
     let dailySummary = document.querySelector('.daily-summary');
     let titleDaily = document.querySelector('.title-week');
-    let iconCurrently = document.querySelector('.icons');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -72,6 +71,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
                         dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p>" +
                             "<p> " + data['summary'] + "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
                             " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
+
                     });
 
                 })
