@@ -37,6 +37,7 @@
         <div class="row">
             <div class="col-md-6">
                 <p class="temperature-degree"></p>
+                <p class="temperature-apparent"></p>
                 <p class="rain-prob"></p>
             </div>
             <div class="col-md-6">

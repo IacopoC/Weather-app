@@ -35,13 +35,13 @@
                         <div class="row">
                             <div class="col-md-6 pt-2">
                                 <p>Pioggia: {{ $weather_results->currently->precipProbability }} %</p>
-                                <p>Temp: {{ $weather_results->currently->temperature }} C°</p>
-                                <p>Indice Uv: {{ $weather_results->currently->uvIndex }}</p>
+                                <p>Temperatura: {{ $weather_results->currently->temperature }} C°</p>
+                                <p>Temperatura percepita: {{ $weather_results->currently->apparentTemperature }} C°</p>
                             </div>
                             <div class="col-md-6 pt-2">
                                 <p>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_results->currently->pressure }} mb</p>
-                                <p>Visibilità: {{ $weather_results->currently->uvIndex }}</p>
+                                <p>Indice UV: {{ $weather_results->currently->uvIndex }}</p>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                                 <canvas class="{{ $weather_day->icon }}" width="64" height="64"></canvas>
                         <p>{{ $weather_day->summary }}</p>
-                                <p>Pioggia: {{ $weather_day->precipProbability }} %</p>
+                                <p>Pioggia: {{ substr($weather_day->precipProbability,2) }} %</p>
                                 <p>Temp: {{ $weather_day->temperatureMin }} / {{ $weather_day->temperatureMax }} C°</p>
                                 <p>Umidità: {{ substr($weather_day->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_day->pressure }} mb</p>

@@ -25,6 +25,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
 
     let rainProb = document.querySelector('.rain-prob');
     let temperatureDescription = document.querySelector('.temperature-description');
+    let temperatureApparent = document.querySelector('.temperature-apparent');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let pressureDegree = document.querySelector('.pressure-degree');
     let locationTimezone = document.querySelector('.location-timezone');
@@ -48,7 +49,7 @@ document.getElementById("geolocation").addEventListener('click', function() {
 
                     showContainer();
 
-                    const {temperature,summary,pressure,uvIndex, precipProbability,icon} = data.currently;
+                    const {temperature,summary,pressure,uvIndex, precipProbability,icon,apparentTemperature} = data.currently;
                     const location = data.timezone;
 
                     showTitle();
@@ -58,8 +59,9 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     rainProb.textContent = `Pioggia: ${precipProbability} %`;
                     indexDegree.textContent = `Indice Uv: ${uvIndex}`;
                     pressureDegree.textContent = `Pressione: ${pressure} mb`;
-                    temperatureDegree.textContent = `Temp: ${temperature} C°`;
+                    temperatureDegree.textContent = `Temperatura: ${temperature} C°`;
                     temperatureDescription.textContent = `${summary}`;
+                    temperatureApparent.textContent = `Temperatura percepita: ${apparentTemperature}`;
                     locationTimezone.textContent = `Fuso orario: ${location}`;
                     titleDaily.textContent = `Tempo della settimana`;
 
