@@ -54,17 +54,25 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="pt-2">Una semplice applicazione per il meteo</h2>
-                <div class="pt-4 pb-4">
-                    <ul>
-                <li>Il meteo nella tua zona</li>
-                <li>Previsioni meteo dettagliate per la settimana</li>
-                <li>Ricerca le previsioni del tempo in tutto il mondo</li>
-                <li>Registrati per sbloccare altre funzionalità e salvare le tue ricerche</li>
-                    </ul>
-                </div>
+        <div class="row featurette">
+            <div class="col-md-5">
+                <h2 class="featurette-heading">Una semplice applicazione per le <span class="text-muted">previsioni meteo</span></h2>
+                <p class="lead">Piccola applicazione web per le previsioni del tempo, utile per sapere che tempo fa nella tua zona e nel resto del mondo</p>
+            </div>
+            <div class="col-md-7 text-right">
+                <img src="{{ asset('img/rain.jpg') }}" width="500px" height="500px">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette pb-4 mb-4">
+            <div class="col-md-5 order-md-2">
+                <h2 class="featurette-heading">Tutte le funzionalità che <span class="text-muted">ti piaceranno</span></h2>
+                <p class="lead">Il meteo nella tua zona, previsioni dettagliate per la settimana, ricerca le previsioni del tempo in tutto il mondo, registrati per far parte della community di weatherapp</p>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <img src="{{ asset('img/rain-night.jpg') }}" width="500px" height="500px">
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
-function timeConverter(UNIX_timestamp){
 
-    let a = new Date(UNIX_timestamp * 1000);
+function timeConverter(unixTimestamp) {
+    let a = new Date(unixTimestamp * 1000);
     let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     let year = a.getFullYear();
     let month = months[a.getMonth()];
@@ -12,11 +12,13 @@ function timeConverter(UNIX_timestamp){
 function showContainer() {
     let element = document.getElementById("container-current");
     element.classList.remove("d-none");
+    element.classList.add("fade-in");
 }
 
 function showTitle() {
     let element = document.getElementById("title-currentw");
     element.classList.remove("d-none");
+    element.classList.add("fade-in");
 }
 
 document.getElementById("geolocation").addEventListener('click', function() {
