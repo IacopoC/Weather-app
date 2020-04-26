@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-    Area utente {{ Auth::user()->name }} - Weather app
+    Area utente {{ $user->name }} - Weather app
 @endsection
 
 @section('content')
@@ -27,8 +27,8 @@
 <div class="container">
     <div class="col-md-12">
         <h3>Dati profilo</h3>
-        <p class="pt-2">Nome: {{ Auth::user()->name }}</p>
-        <p>Email: {{ Auth::user()->email }}</p>
+        <p class="pt-2">Nome: {{ $user->name }}</p>
+        <p>Email: {{ $user->email }}</p>
         <p>Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</p>
     </div>
 </div>
