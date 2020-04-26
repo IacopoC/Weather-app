@@ -60,6 +60,10 @@ button.ap-input-icon.ap-icon-pin {
     width:20px;
 }
 
+.img-profile {
+    border-radius: 25%;
+}
+
 .featurette-divider {
     margin: 5rem 0;
 }

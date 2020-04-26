@@ -9,31 +9,13 @@ function timeConverter(unixTimestamp) {
     return time;
 }
 
-function showContainer() {
-    let element = document.getElementById("container-current");
-    element.classList.remove("d-none");
-    element.classList.add("fade-in");
-}
-
-function showTitle() {
-    let element = document.getElementById("title-currentw");
-    element.classList.remove("d-none");
-    element.classList.add("fade-in");
-}
-
-document.getElementById("geolocation").addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded',function() {
     let long;
     let lat;
 
-    let rainProb = document.querySelector('.rain-prob');
     let temperatureDescription = document.querySelector('.temperature-description');
-    let temperatureApparent = document.querySelector('.temperature-apparent');
     let temperatureDegree = document.querySelector('.temperature-degree');
-    let pressureDegree = document.querySelector('.pressure-degree');
-    let locationTimezone = document.querySelector('.location-timezone');
-    let indexDegree = document.querySelector('.uvindex-degree');
-    let dailySummary = document.querySelector('.daily-summary');
-    let titleDaily = document.querySelector('.title-week');
+    let locationDate = document.querySelector('.location-date');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -48,35 +30,14 @@ document.getElementById("geolocation").addEventListener('click', function() {
                     return response.json();
                 })
                 .then(data => {
-
-                    showContainer();
-
-                    const {temperature,summary,pressure,uvIndex, precipProbability,icon,apparentTemperature} = data.currently;
-                    const location = data.timezone;
-
-                    showTitle();
+                    console.log(data);
+                    const {temperature,summary,icon,time} = data.currently;
 
                     setIcons(icon, document.getElementsByClassName("icon1")[0]);
 
-                    rainProb.textContent = `Pioggia: ${precipProbability} %`;
-                    indexDegree.textContent = `Indice Uv: ${uvIndex}`;
-                    pressureDegree.textContent = `Pressione: ${pressure} mb`;
-                    temperatureDegree.textContent = `Temperatura: ${temperature} C°`;
+                    temperatureDegree.textContent = `Temp: ${temperature} C°`;
                     temperatureDescription.textContent = `${summary}`;
-                    temperatureApparent.textContent = `Temperatura percepita: ${apparentTemperature}`;
-                    locationTimezone.textContent = `Fuso orario: ${location}`;
-                    titleDaily.textContent = `Tempo della settimana`;
-
-                    data.daily.data.forEach(function (data) {
-                        let timeDate = data['time'];
-                        let hum = data['humidity'];
-                        let hum_str = hum.toString();
-
-                        dailySummary.innerHTML += "<div class='pt-4 pb-4 mb-3 col-md-3'><p><strong>" + timeConverter(timeDate) + "</strong></p>" +
-                            "<p> " + data['summary'] + "</p><p>Pressione: " + data['pressure'] + " mb</p><p>Umidità: " + hum_str.substring(2) +
-                            " %</p><p>Vento: " + data['windSpeed'] + " km/h</p></div>";
-
-                    });
+                    locationDate.textContent = `${timeConverter(time)}`;
 
                 })
                 .catch(error => console.log("Si è verificato un errore"))
