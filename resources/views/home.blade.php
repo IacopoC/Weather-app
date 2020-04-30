@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-7">
                     <h1 class="display-4 text-white mt-2 mb-2">Benvenuto {{ $user->name }}</h1>
-                    <p class="lead mb-3 text-white">Dashboard</p>
+                    <p class="lead mb-3 ml-1 text-white">Dashboard</p>
                         </div>
                         <div class="col-md-5">
                             <div class="image-avatar text-right">
