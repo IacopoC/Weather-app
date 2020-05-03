@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout-search')
 
     @section('title')
     Homepage - Weather app

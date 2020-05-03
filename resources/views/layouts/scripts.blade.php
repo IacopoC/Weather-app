@@ -1,12 +1,6 @@
 <!-- Bootstrap core JavaScript -->
-<script>
-    const weather_api_key = "{{ env('WEATHER_DATABASE_KEY')}}"
-</script>
+
 <script src="{{asset('js/jquery/jquery.min.js')}}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{asset('js/empty-field.js')}}"></script>
-<script src="{{asset('js/skycons.js')}}"></script>
-<script src="{{asset('js/skycons-act.js')}}"></script>
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="{{asset('js/search-city.js')}}"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
 

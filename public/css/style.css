@@ -23,6 +23,10 @@ body {
     margin-bottom:130px;
 }
 
+.dropdown-item:hover {
+    background-color:black;
+}
+
 .fade-in {
     opacity: 1;
     animation-name: fadeInOpacity;

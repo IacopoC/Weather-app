@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout-search')
 
 @section('title')
     Risultati ricerca per {{ $query }} - Weather app
