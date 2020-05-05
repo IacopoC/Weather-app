@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded',function() {
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationDate = document.querySelector('.location-date');
+    let locationData = document.querySelector('.location-data');
 
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -23,8 +24,26 @@ document.addEventListener('DOMContentLoaded',function() {
             lat = position.coords.latitude;
 
             const api_key = weather_api_key;
+            const location_key = google_location_key;
             const proxy = `https://cors-anywhere.herokuapp.com/`;
             const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${lat},${long}?units=si&lang=it`;
+            const api_location = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${location_key}`;
+
+            fetch(api_location)
+                .then(response => {
+                    return response.json();
+                })
+
+                .then(location_data => {
+                    console.log(location_data);
+                    let {compound_code} = location_data.plus_code;
+
+                    locationData.textContent = `${compound_code}`;
+
+                })
+
+                .catch(error => console.log("Errore nel mostrare indizzo geolocalizzato"));
+
             fetch(api)
                 .then(response => {
                     return response.json();
@@ -40,7 +59,7 @@ document.addEventListener('DOMContentLoaded',function() {
                     locationDate.textContent = `${timeConverter(time)}`;
 
                 })
-                .catch(error => console.log("Si è verificato un errore"))
+                .catch(error => console.log("Errore nel mostrare dati meteo"))
         })
     } else {
         alert('Non hai accesso alla geolocalizzazione');

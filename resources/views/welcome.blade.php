@@ -24,6 +24,7 @@
                             <p class="text-white temperature-description"></p>
                             <p class="text-white temperature-degree"></p>
                             <p class="text-white location-date"></p>
+                            <p class="text-white location-data"></p>
                                 </div>
                             </div>
                         </div>

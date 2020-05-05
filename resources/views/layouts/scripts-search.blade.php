@@ -1,5 +1,6 @@
 <script>
     const weather_api_key = "{{ env('WEATHER_DATABASE_KEY')}}"
+    const google_location_key = "{{ env('GOOGLE_GEOLOCATION_KEY') }}"
 </script>
 <script src="{{asset('js/empty-field.js')}}"></script>
 <script src="{{asset('js/skycons.js')}}"></script>
