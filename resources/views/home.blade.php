@@ -30,6 +30,7 @@
         <p class="pt-2">Nome: {{ $user->name }}</p>
         <p>Email: {{ $user->email }}</p>
         <p>Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</p>
+        <p>Aggiornato al: {{ date('d M Y', $user->updated_at->timestamp) }}</p>
     </div>
 </div>
 @endsection
