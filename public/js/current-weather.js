@@ -1,7 +1,7 @@
 
 function timeConverter(unixTimestamp) {
     let a = new Date(unixTimestamp * 1000);
-    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let months = ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Aug','Set','Ott','Nov','Dic'];
     let year = a.getFullYear();
     let month = months[a.getMonth()];
     let date = a.getDate();
@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded',function() {
                 .then(location_data => {
                     console.log(location_data);
                     let {compound_code} = location_data.plus_code;
+                    let compound_short = compound_code.slice(7);
 
-                    locationData.textContent = `${compound_code}`;
+                    locationData.textContent = `${compound_short}`;
 
                 })
 
