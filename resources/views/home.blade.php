@@ -37,16 +37,19 @@
         <div class="col-md-6">
             @if(!empty($user->address))
                 <h3>Indirizzo</h3>
-                <p class="pt-2">Indirizzo: {{ $user->address }}</p>
+                <p class="pt-2">{{ $user->address }},
             @endif
             @if(!empty($user->zip))
-               <p>CAP: {{ $user->zip }}</p>
+               {{ $user->zip }}</p>
             @endif
-            @if(!empty($user->hometown))
-                <p>Città: {{ $user->hometown }}</p>
-            @endif
+             @if(!empty($user->hometown))
+                <p>{{ $user->hometown }},
+             @endif
+             @if(!empty($user->province))
+                 {{ $user->province }}
+             @endif
             @if(!empty($user->country))
-              <p>Stato: {{ $user->country }}</p>
+              {{ $user->country }}</p>
             @endif
         </div>
         <div class="col-md-12 pt-4 pb-4">
@@ -79,6 +82,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="province" class="col-md-6 control-label-p">Provincia</label>
+                            <div class="col-md-9">
+                                <input id="province" type="text" class="form-control" name="province" value="@if(!empty($user->province)){{ $user->province }} @endif">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="hometown" class="col-md-4 control-label-p">Città</label>
 
                             <div class="col-md-9">
@@ -101,7 +110,11 @@
                                 </select>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <div class="col-md-9">
+                            <p>Vuoi cambiare l'immagine del profilo? La prendiamo da <a href="https://www.gravatar.com" target="_blank">gravatar.com</a></p>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-9 col-md-offset-2">
                                 <button type="submit" class="btn btn-primary">
