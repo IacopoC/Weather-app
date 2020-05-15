@@ -46,11 +46,8 @@
                 <p>{{ $user->hometown }},
              @endif
              @if(!empty($user->province))
-                 {{ $user->province }}
+                 {{ $user->province }}</p>
              @endif
-            @if(!empty($user->country))
-              {{ $user->country }}</p>
-            @endif
         </div>
         <div class="col-md-12 pt-4 pb-4">
             <button data-toggle="modal" data-target="#userModal" class="btn btn-primary">Modifica profilo</button>

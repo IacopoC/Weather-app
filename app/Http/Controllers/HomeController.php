@@ -51,6 +51,7 @@ class HomeController extends Controller
 
         $user->save();
 
-        return view('home', compact('user'));
+        return redirect()->route('home');
+
     }
 }
