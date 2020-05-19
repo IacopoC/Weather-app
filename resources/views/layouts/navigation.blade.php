@@ -37,6 +37,11 @@
                             </form>
                         </div>
                     </li>
+                    @if(!empty($user->hometown))
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search?q={{ $user->hometown }}">Località: {{ $user->hometown }}</a>
+                    </li>
+                        @endif
                 @endguest
             </ul>
         </div>
