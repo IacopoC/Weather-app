@@ -41,7 +41,7 @@
                             <div class="col-md-6 pt-2">
                                 <p>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_results->currently->pressure }} mb</p>
-                                <p>Indice UV: {{ $weather_results->currently->uvIndex }}</p>
+                                <p>Vento: {{ $weather_results->currently->windSpeed }} km/h</p>
                             </div>
                         </div>
                     </div>

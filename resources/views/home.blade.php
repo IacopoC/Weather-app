@@ -13,7 +13,11 @@
                     <div class="row">
                         <div class="col-md-7">
                     <h1 class="display-4 text-white mt-2 mb-2">Benvenuto {{ $user->name }}</h1>
-                    <p class="lead mb-3 ml-1 text-white">Dashboard</p>
+                            @if(empty($user->address) and empty($user->hometown))
+                                <p class="lead text-white">Completa il profilo inserendo un indirizzo di una località</p>
+                            @else
+                                <p class="lead mb-3 ml-1 text-white">Utente</p>
+                            @endif
                         </div>
                         <div class="col-md-5">
                             <div class="image-avatar text-right">
@@ -28,26 +32,33 @@
 <div class="container">
     <div class="row">
     <div class="col-md-6">
-        <h3>Dati profilo</h3>
-        <p class="pt-2">Nome: {{ $user->name }}</p>
-        <p>Email: {{ $user->email }}</p>
-        <p>Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</p>
-        <p>Aggiornato al: {{ date('d M Y', $user->updated_at->timestamp) }}</p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h3>Dati profilo</h3>
+            </li>
+            <li class="list-group-item">Nome: {{ $user->name }}</li>
+            <li class="list-group-item">Email: {{ $user->email }}</li>
+            <li class="list-group-item">Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</li>
+            <li class="list-group-item">Aggiornato al: {{ date('d M Y', $user->updated_at->timestamp) }}</li>
+        </ul>
     </div>
         <div class="col-md-6">
+            <ul class="list-group">
             @if(!empty($user->address))
-                <h3>Indirizzo</h3>
-                <p class="pt-2">{{ $user->address }},
+             <li class="list-group-item">
+               <h3>Indirizzo</h3></li>
+            <li class="list-group-item">{{ $user->address }}
             @endif
             @if(!empty($user->zip))
-               {{ $user->zip }}</p>
+               {{ $user->zip }}</li>
             @endif
              @if(!empty($user->hometown))
-                <p>{{ $user->hometown }},
+              <li class="list-group-item">{{ $user->hometown }}
              @endif
              @if(!empty($user->province))
-                 {{ $user->province }}</p>
+               , {{ $user->province }}</li>
              @endif
+            </ul>
         </div>
         <div class="col-md-12 pt-4 pb-4">
             <button data-toggle="modal" data-target="#userModal" class="btn btn-primary">Modifica profilo</button>

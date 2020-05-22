@@ -37,9 +37,9 @@
                             </form>
                         </div>
                     </li>
-                    @if(!empty($user->hometown))
+                    @if(!empty(Auth::user()->hometown))
                     <li class="nav-item">
-                        <a class="nav-link" href="/search?q={{ $user->hometown }}">Località: {{ $user->hometown }}</a>
+                        <a class="nav-link" href="/search?q={{ Auth::user()->hometown }}">Località: {{ Auth::user()->hometown }}</a>
                     </li>
                         @endif
                 @endguest
