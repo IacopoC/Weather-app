@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-md-5">
                             <div class="image-avatar text-right">
-                                <img class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
+                                <img alt="user_image" class="img-profile" src="{{ 'https://www.gravatar.com/avatar/' . gravatar_img($user->email) }} . '?s=200'">
                             </div>
                         </div>
                     </div>
