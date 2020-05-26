@@ -23,6 +23,10 @@ body {
     margin-bottom:130px;
 }
 
+.border-4 {
+    border-width:4px !important;
+}
+
 .dropdown-item:hover {
     background-color:black;
 }
@@ -69,7 +73,7 @@ button.ap-input-icon.ap-icon-pin {
 }
 
 .featurette-divider {
-    margin: 5rem 0;
+    margin: 3rem 0;
 }
 
 .featurette-heading {

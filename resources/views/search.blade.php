@@ -30,8 +30,7 @@
                     <div class="p-4">
                         <h3> Il tempo adesso</h3>
                         <canvas class="{{ $weather_results->currently->icon }}" width="64" height="64"></canvas>
-                        <p>{{ $weather_results->currently->summary }}</p>
-                        <hr>
+                        <p class="pt-2"><strong>{{ $weather_results->currently->summary }}</strong></p>
                         <div class="row">
                             <div class="col-md-6 pt-2">
                                 <p>Pioggia: {{ $weather_results->currently->precipProbability }} %</p>
@@ -49,17 +48,18 @@
                 <div class="p-4">
                     <h3>Il tempo della settimana</h3>
                     <p>{{ $weather_results->daily->summary }}</p>
-                    <hr>
                     <div class="row">
                     @foreach($weather_results->daily->data as $weather_day)
                             <div class="col-md-3 pt-4">
+                                <div class="border border-4 border-secondary p-3 rounded">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                                 <canvas class="{{ $weather_day->icon }}" width="64" height="64"></canvas>
-                        <p>{{ $weather_day->summary }}</p>
+                                    <p><strong>{{ $weather_day->summary }}</strong></p>
                                 <p>Pioggia: {{ substr($weather_day->precipProbability,2) }} %</p>
                                 <p>Temp: {{ $weather_day->temperatureMin }} / {{ $weather_day->temperatureMax }} C°</p>
                                 <p>Umidità: {{ substr($weather_day->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_day->pressure }} mb</p>
+                            </div>
                             </div>
                     @endforeach
                     </div>
