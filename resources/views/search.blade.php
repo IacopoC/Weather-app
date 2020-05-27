@@ -33,14 +33,18 @@
                         <p class="pt-2"><strong>{{ $weather_results->currently->summary }}</strong></p>
                         <div class="row">
                             <div class="col-md-6 pt-2">
+                                <div class="bg-light p-3">
                                 <p>Pioggia: {{ $weather_results->currently->precipProbability }} %</p>
                                 <p>Temperatura: {{ $weather_results->currently->temperature }} C°</p>
                                 <p>Temperatura percepita: {{ $weather_results->currently->apparentTemperature }} C°</p>
                             </div>
+                            </div>
                             <div class="col-md-6 pt-2">
+                                <div class="bg-light p-3">
                                 <p>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</p>
                                 <p>Pressione: {{ $weather_results->currently->pressure }} mb</p>
                                 <p>Vento: {{ $weather_results->currently->windSpeed }} km/h</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -51,7 +55,7 @@
                     <div class="row">
                     @foreach($weather_results->daily->data as $weather_day)
                             <div class="col-md-3 pt-4">
-                                <div class="border border-4 border-secondary p-3 rounded">
+                                <div class="bg-light p-3 rounded">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                                 <canvas class="{{ $weather_day->icon }}" width="64" height="64"></canvas>
                                     <p><strong>{{ $weather_day->summary }}</strong></p>
