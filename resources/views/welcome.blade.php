@@ -54,7 +54,7 @@
         <div class="row featurette pb-4 mb-4">
             <div class="col-md-5 order-md-2">
                 <h2 class="featurette-heading">Tutte le funzionalità che <span class="text-muted">ti piaceranno</span></h2>
-                <p class="lead">Il meteo nella tua zona, previsioni dettagliate per la settimana, ricerca le previsioni del tempo in tutto il mondo, registrati per far parte della community di weatherapp</p>
+                <p class="lead">Il meteo nella tua zona, previsioni dettagliate per la settimana, ricerca le previsioni del tempo in tutto il mondo, registrati per salvare le tue ricerche di località.</p>
             </div>
             <div class="col-md-7 order-md-1">
                 <img class="img-fluid" src="{{ asset('img/rain-night.jpg') }}">
