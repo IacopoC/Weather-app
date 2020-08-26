@@ -78,6 +78,18 @@ button.ap-input-icon.ap-icon-pin {
     letter-spacing: -.05rem;
 }
 
+#video-weather {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
 @media (min-width: 62em) {
     .featurette-heading {
         margin-top: 7rem;

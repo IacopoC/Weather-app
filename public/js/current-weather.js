@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function() {
                     let {compound_code} = location_data.plus_code;
                     let compound_short = compound_code.slice(7);
 
-                    locationData.textContent = `${compound_short}`;
+                    locationData.innerHTML = '<a class="text-white" href="/search?q=' + compound_short + '">' + compound_short + '</a>';
 
                 })
 

@@ -6,7 +6,11 @@
 
     @section('content')
     <!-- Header -->
-    <header class="bg-primary py-5 mb-5 gradient-secondary">
+    <header class="py-5 mb-5">
+        <video autoplay muted loop id="video-weather">
+            <source src="{{ asset('video/weather.mp4') }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
@@ -45,7 +49,7 @@
                 <p class="lead">Piccola applicazione web per le previsioni del tempo, utile per sapere che tempo fa nella tua zona e nel resto del mondo</p>
             </div>
             <div class="col-md-7 text-right">
-                <img class="img-fluid" src="{{ asset('img/rain.jpg') }}">
+                <img class="img-fluid" src="{{ asset('img/rain.jpg') }}" alt="rain">
             </div>
         </div>
 
@@ -57,7 +61,7 @@
                 <p class="lead">Il meteo nella tua zona, previsioni dettagliate per la settimana, ricerca le previsioni del tempo in tutto il mondo, registrati per salvare le tue ricerche di località.</p>
             </div>
             <div class="col-md-7 order-md-1">
-                <img class="img-fluid" src="{{ asset('img/rain-night.jpg') }}">
+                <img class="img-fluid" src="{{ asset('img/rain-night.jpg') }}" alt="night-rain">
             </div>
         </div>
     </div>
