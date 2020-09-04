@@ -7,3 +7,6 @@
 <script src="{{asset('js/skycons-act.js')}}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{asset('js/search-city.js')}}"></script>
+@if (!Auth::guest())
+    <script src="{{ asset('js/add-location.js') }}"></script>
+@endif

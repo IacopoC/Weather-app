@@ -68,6 +68,23 @@
                     @endforeach
                     </div>
                 </div>
+                @if (!Auth::guest())
+                    <div class="p-4">
+                        <form id="insert-location" name="location-insert">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <input type="hidden" name="location" id="location" value="{{ $_GET['q'] }}">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="film_id" id="user-id" value="{{ Auth::user()->id }}">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" id="location-submit" value="Salva location">
+                            </div>
+                        </form>
+                        <p id="form-message"></p>
+                    </div>
+                @endif;
             </div>
         </div>
         <!-- /.row -->
