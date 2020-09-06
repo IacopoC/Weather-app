@@ -84,7 +84,7 @@
                         </form>
                         <p id="form-message"></p>
                     </div>
-                @endif;
+                @endif
             </div>
         </div>
         <!-- /.row -->
@@ -94,4 +94,30 @@
 
     </div>
     <!-- /.container -->
+    <script>
+        document.getElementById('insert-location').addEventListener('submit',sendLocation);
+
+        function sendLocation(e) {
+            e.preventDefault();
+
+            let user_id = document.getElementById('user-id').value;
+            let location = document.getElementById('location').value;
+
+            let param = { "user id": user_id, "location": location, "_token": '{{ csrf_token() }}' };
+
+            let xhr = new XMLHttpRequest();
+            let url = `/store`;
+
+            xhr.open('POST', url , true);
+            xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
+            xhr.onreadystatechange = function () {
+                if (xhr.status == 200) {
+                    console.log(xhr.responseText);
+                }
+
+            }
+            document.getElementById('form-message').innerHTML = `Location aggiunta alla cronologia`;
+            xhr.send(param);
+        }
+    </script>
 @endsection
