@@ -24,5 +24,3 @@ Route::get('/search', 'GeneralController@search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/home', 'HomeController@updateUser');
-
-Route::post('/store', 'GeneralController@store');
