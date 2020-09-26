@@ -22,9 +22,11 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown {{ Request::path() === 'home' ? 'active': '' }}">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="dropdown-user">
+                            <a class="dropdown-item text-white {{ Request::path() === 'home' ? 'active': '' }}" href="{{ route('home') }}">Profilo</a>
+                            <a class="dropdown-item text-white {{ Request::path() === 'history' ? 'active': '' }}" href="/history">Cronologia</a>
                             <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">

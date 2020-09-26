@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Location;
 
 class HomeController extends Controller
 {
@@ -53,5 +54,13 @@ class HomeController extends Controller
 
         return redirect()->route('home');
 
+    }
+
+    public function history()
+    {
+        $id = Auth::user()->id;
+        $locations = Location::where('user_id', $id)->get();
+
+        return view('history' , compact('locations'));
     }
 }

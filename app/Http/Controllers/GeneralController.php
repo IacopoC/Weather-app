@@ -33,7 +33,8 @@ class GeneralController extends Controller
     }
 
 
-    public function storeLocation($query) {
+    public function storeLocation($query)
+    {
 
         if (Auth::check()) {
             $id = Auth::user()->id;
