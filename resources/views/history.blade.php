@@ -24,7 +24,15 @@
                 @if(!empty($locations))
                 <div class="list-group pt-4 pb-4">
                     @foreach($locations as $location)
-                    <p class="list-group-item">{{ $location->location }} | {{ $location->created_at }}</p>
+                        <div class="list-group-item">
+                            <p> {{ $location->location }}</p>
+                            <form id="history-form" class="d-inline" method="POST">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="location_id" id="location-id" value="{{ $location->id }}">
+                                <button type="submit" id="film-submit" class="btn btn-danger">Cancella</button>
+                            </form>
+                            <p>{{ $location->created_at }}</p>
+                        </div>
                     @endforeach
                 </div>
                 @endif
