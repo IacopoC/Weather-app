@@ -26,7 +26,7 @@
                     @foreach($locations as $location)
                         <div class="list-group-item">
                             <p> {{ $location->location }}</p>
-                            <form id="history-form" class="d-inline" method="POST">
+                            <form id="history-form" class="d-inline">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="location_id" id="location-id" value="{{ $location->id }}">
                                 <button type="submit" id="film-submit" class="btn btn-danger">Cancella</button>
@@ -39,4 +39,27 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("film-submit").addEventListener("click", function() {
+            let value_delete = document.getElementById("location-id").value;
+            const link = '/history/' + value_delete;
+
+            fetch(link, {
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "X-CSFR-TOKEN": "<meta name=\'csrf-token\' content=\'{{ csrf_token() }}\'>"
+                },
+                method: 'POST',
+            })
+                .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
+                .then(response => {
+                    alert('Cancella dato');
+                    console.log(res);
+                })
+                .catch(err => {
+                    console.log(err);
+                    alert("sorry, there are no results for your search")
+                });
+        });
+    </script>
 @endsection
