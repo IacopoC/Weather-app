@@ -59,7 +59,7 @@ class HomeController extends Controller
     public function history()
     {
         $id = Auth::user()->id;
-        $locations = Location::where('user_id', $id)->simplePaginate(15);
+        $locations = Location::where('user_id', $id)->orderBy('created_at', 'desc')->simplePaginate(15);
 
         return view('history' , compact('locations'));
     }
@@ -68,5 +68,7 @@ class HomeController extends Controller
     {
         $location_id = request('location_id');
         Location::where('id',"=",$location_id)->delete();
+
+        return view('delete-history');
     }
 }

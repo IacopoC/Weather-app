@@ -24,9 +24,9 @@
                 @if(!empty($locations))
                 <div class="list-group pt-4 pb-4">
                     @foreach($locations as $location)
-                        <div class="list-group-item m-2">
-                            <p> {{ $location->location }}</p>
-                            <form id="history-form" class="d-inline" method="post">
+                        <div class="list-group-item bg-light m-2">
+                            <h5><strong>{{ $location->location }}</strong></h5>
+                            <form id="history-form" class="d-inline" method="post" action="/delete-history">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="location_id" id="location-id" value="{{ $location->id }}">
                                 <button type="submit" id="film-submit" class="btn btn-danger float-right">Cancella</button>
@@ -39,24 +39,4 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById("film-submit").addEventListener("click", function() {
-            let value_delete = document.getElementById("location-id").value;
-            const link = `/delete-history`;
-
-            const axios = require("axios");
-
-            axios.delete(link, { _method: 'delete',
-                                "_token": '{{ csrf_token() }}',
-                                 params: value_delete })
-                .then(response => {
-                    alert('Cancella dato');
-                    console.log(res);
-                })
-                .catch(err => {
-                    console.log(err);
-                    alert('Errore');
-                });
-        });
-    </script>
 @endsection

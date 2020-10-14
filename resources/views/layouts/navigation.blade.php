@@ -7,11 +7,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ Request::path() === '/' ? 'active': '' }}">
-                    <a class="nav-link" href="{{ url('/') }}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
                 @guest
                     <li class="nav-item {{ Request::path() === 'login' ? 'active': '' }}">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
