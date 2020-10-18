@@ -64,11 +64,12 @@ class HomeController extends Controller
         return view('history' , compact('locations'));
     }
 
-    public function deleteHistory(Request $request)
+    public function deleteHistory()
     {
-        $location_id = request('location_id');
+        $location_id = request("location_id");
+
         Location::where('id',"=",$location_id)->delete();
 
-        return view('delete-history');
+        return view('history');
     }
 }

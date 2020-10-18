@@ -26,10 +26,10 @@
                     @foreach($locations as $location)
                         <div class="list-group-item bg-light m-2">
                             <h5><strong>{{ $location->location }}</strong></h5>
-                            <form id="history-form" class="d-inline" method="post" action="/delete-history">
+                            <form id="history-form" class="d-inline" method="post" action="{{ action('HomeController@deleteHistory') }}">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="location_id" id="location-id" value="{{ $location->id }}">
-                                <button type="submit" id="film-submit" class="btn btn-danger float-right">Cancella</button>
+                                <button type="submit" id="location-submit" class="btn btn-danger float-right">Cancella</button>
                             </form>
                             <p>{{ $location->created_at }}</p>
                         </div>
@@ -39,4 +39,27 @@
             </div>
         </div>
     </div>
+    <script>
+
+       document.getElementById('location-submit').addEventListener('onclick', deleteHistory);
+
+
+       async function deleteHistory() {
+
+           const axios = require('axios');
+
+           const token = document.head.querySelector('meta[name="csrf-token"]');
+           window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+           let id = document.getElementById('location-id').value;
+
+            await axios.delete('/delete-history', {
+               data: {id: id}
+           }).then((response) => {
+               console.log(response)
+           }).catch((error) => {
+               console.log(error.response.data)
+           });
+       }
+    </script>
 @endsection
