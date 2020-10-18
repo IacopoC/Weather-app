@@ -27,4 +27,4 @@ Route::post('/home', 'HomeController@updateUser');
 
 Route::get('/history', 'HomeController@history');
 
-Route::post('/delete-history', 'HomeController@deleteHistory');
+Route::post('/history', 'HomeController@deleteHistory');

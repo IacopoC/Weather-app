@@ -26,7 +26,7 @@
                     @foreach($locations as $location)
                         <div class="list-group-item bg-light m-2">
                             <h5><strong>{{ $location->location }}</strong></h5>
-                            <form id="history-form" class="d-inline" method="post" action="{{ action('HomeController@deleteHistory') }}">
+                            <form id="history-form" class="d-inline" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="location_id" id="location-id" value="{{ $location->id }}">
                                 <button type="submit" id="location-submit" class="btn btn-danger float-right">Cancella</button>
@@ -44,7 +44,7 @@
        document.getElementById('location-submit').addEventListener('onclick', deleteHistory);
 
 
-       async function deleteHistory() {
+        function deleteHistory() {
 
            const axios = require('axios');
 
@@ -53,7 +53,7 @@
 
            let id = document.getElementById('location-id').value;
 
-            await axios.delete('/history', {
+             axios.delete('/history', {
                data: {id: id}
            }).then((response) => {
                console.log(response)
