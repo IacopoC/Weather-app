@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Location;
 
@@ -67,9 +66,7 @@ class HomeController extends Controller
     public function deleteHistory()
     {
         $location_id = request("location_id");
-
         Location::where('id',"=",$location_id)->delete();
 
-        return view('history');
     }
 }

@@ -53,7 +53,7 @@
 
            let id = document.getElementById('location-id').value;
 
-            await axios.delete('/delete-history', {
+            await axios.delete('/history', {
                data: {id: id}
            }).then((response) => {
                console.log(response)
