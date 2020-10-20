@@ -35,6 +35,8 @@
                         </div>
                     @endforeach
                 </div>
+                @else
+                    <h3>Le località cercate verranno aggiunte alla tua cronologia</h3>
                 @endif
             </div>
         </div>
@@ -53,7 +55,7 @@
 
            let id = document.getElementById('location-id').value;
 
-             axios.delete('/history', {
+             axios.delete('/delete-history', {
                data: {id: id}
            }).then((response) => {
                console.log(response)

@@ -68,5 +68,7 @@ class HomeController extends Controller
         $location_id = request("location_id");
         Location::where('id',"=",$location_id)->delete();
 
+        return redirect()->route('history');
+
     }
 }
