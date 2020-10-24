@@ -41,27 +41,4 @@
             </div>
         </div>
     </div>
-    <script>
-
-       document.getElementById('location-submit').addEventListener('onclick', deleteHistory);
-
-
-        function deleteHistory() {
-
-           const axios = require('axios');
-
-           const token = document.head.querySelector('meta[name="csrf-token"]');
-           window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-
-           let id = document.getElementById('location-id').value;
-
-             axios.delete('/delete-history', {
-               data: {id: id}
-           }).then((response) => {
-               console.log(response)
-           }).catch((error) => {
-               console.log(error.response.data)
-           });
-       }
-    </script>
 @endsection
