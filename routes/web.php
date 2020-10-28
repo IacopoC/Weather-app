@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/forecast', 'GeneralController@index');
+Route::get('/', 'GeneralController@searched');
+
+Route::get('/forecast', 'GeneralController@forecast');
 
 Route::get('/search', 'GeneralController@search');
 

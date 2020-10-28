@@ -42,6 +42,21 @@
     </header>
 
     <!-- Page Content -->
+    @if(!empty($searched))
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <h4 class="featurette-heading pb-4">Le tue ultime ricerche:</h4>
+            </div>
+            @foreach($searched as $search)
+                <div class="col-md-4">
+                    <a class="text-dark" href="/search?q={{ $search->location }}"><p class="lead">{{ $search->location }}</p></a>
+                </div>
+                @endforeach
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    @endif
     <div class="container">
         <div class="row featurette">
             <div class="col-md-5">

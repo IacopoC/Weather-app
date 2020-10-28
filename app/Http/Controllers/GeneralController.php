@@ -13,12 +13,21 @@ class GeneralController extends Controller
     }
 
 
-    public function index()
+    public function forecast()
     {
-
         $weather_data = $this->basetype->getDefaultWeather();
-
         return view('forecast', compact( 'weather_data'));
+    }
+
+    public function searched()
+    {
+        if (Auth::check()) {
+            $id = Auth::user()->id;
+            $searched = Location::where('user_id', $id)->orderBy('created_at', 'desc')->take(3)->get();
+            return view('welcome', compact('searched'));
+        } else {
+            return view('welcome');
+        }
     }
 
 
@@ -35,15 +44,12 @@ class GeneralController extends Controller
 
     public function storeLocation($query)
     {
-
         if (Auth::check()) {
             $id = Auth::user()->id;
 
             $locations = new Location;
-
             $locations->location = $query;
             $locations->user_id = $id;
-
             $locations->save();
         }
     }
