@@ -72,7 +72,7 @@ button.ap-input-icon.ap-icon-pin {
     margin: 3rem 0;
 }
 
-.featurette-heading {
+.featurette-heading, .featurette-heading-small {
     font-weight: 300;
     line-height: 1;
     letter-spacing: -.05rem;

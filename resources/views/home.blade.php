@@ -31,34 +31,31 @@
     </header>
 <div class="container">
     <div class="row">
-    <div class="col-md-6">
-        <ul class="list-group">
-            <li class="list-group-item">
-                <h3>Dati profilo</h3>
-            </li>
-            <li class="list-group-item">Nome: {{ $user->name }}</li>
-            <li class="list-group-item">Email: {{ $user->email }}</li>
-            <li class="list-group-item">Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</li>
-            <li class="list-group-item">Aggiornato al: {{ date('d M Y', $user->updated_at->timestamp) }}</li>
-        </ul>
+    <div class="col-md-12">
+        <h3>Dati profilo</h3>
+        <hr>
+            <p>Nome: {{ $user->name }}</p>
+            <p>Email: {{ $user->email }}</p>
+            <p>Iscritto dal: {{ date('d M Y', $user->created_at->timestamp) }}</p>
+            <p>Aggiornato al: {{ date('d M Y', $user->updated_at->timestamp) }}</p>
+
     </div>
-        <div class="col-md-6">
-            <ul class="list-group">
+        <div class="col-md-12">
+
             @if(!empty($user->address))
-             <li class="list-group-item">
-               <h3>Indirizzo</h3></li>
-            <li class="list-group-item">{{ $user->address }}
+               <h3 class="pt-4">Indirizzo</h3>
+            <hr>
+            <p>{{ $user->address }}
             @endif
             @if(!empty($user->zip))
-               {{ $user->zip }}</li>
+               {{ $user->zip }}</p>
             @endif
              @if(!empty($user->hometown))
-              <li class="list-group-item">{{ $user->hometown }}
+              <p>{{ $user->hometown }}
              @endif
              @if(!empty($user->province))
-               , {{ $user->province }}</li>
+               , {{ $user->province }}</p>
              @endif
-            </ul>
         </div>
         <div class="col-md-12 pt-4 pb-4">
             <button data-toggle="modal" data-target="#userModal" class="btn btn-primary">Modifica profilo</button>

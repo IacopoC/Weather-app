@@ -12,6 +12,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             <h1 class="display-4 text-white mt-2 mb-2">Cronologia</h1>
+                            <p class="text-white">Utente: {{ Auth::user()->name }}</p>
                         </div>
                     </div>
                 </div>
