@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Location;
 
@@ -60,12 +61,12 @@ class HomeController extends Controller
         $id = Auth::user()->id;
         $locations = Location::where('user_id', $id)->orderBy('created_at', 'desc')->simplePaginate(15);
 
-        return view('history' , compact('locations'));
+        return view('history' , array('user'=>Auth::user()) , compact('locations'));
     }
 
-    public function deleteHistory()
+    public function deleteHistory(Request $request)
     {
-        $location_id = request("location_id");
+        $location_id = $request->input("location_id");
         Location::where('id',"=",$location_id)->delete();
 
         return redirect()->route('history');

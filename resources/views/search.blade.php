@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-12 mb-5">
                 <div class="pt-2 pl-4">
-                    <p>Fuso orario: {{ $weather_results->timezone }}</p>
+                    <p><strong>Fuso orario: {{ $weather_results->timezone }}</strong></p>
                 </div>
                 <div class="mt-4 mb-4">
                     <div class="p-4">
@@ -55,13 +55,13 @@
                     <div class="row">
                     @foreach($weather_results->daily->data as $weather_day)
                             <div class="col-md-3 pt-4">
-                                <div class="bg-light p-3 rounded">
+                                <div class="bg-light p-3 h-350">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                                 <canvas class="{{ $weather_day->icon }}" width="64" height="64"></canvas>
                                     <p><strong>{{ $weather_day->summary }}</strong></p>
-                                <p>Pioggia: {{ substr($weather_day->precipProbability,2) }} %</p>
+                                <p>Pioggia: {{ $weather_day->precipProbability }} %</p>
                                 <p>Temp: {{ $weather_day->temperatureMin }} / {{ $weather_day->temperatureMax }} C°</p>
-                                <p>Umidità: {{ substr($weather_day->humidity,2) }} %</p>
+                                <p>Umidità: {{ $weather_day->humidity }} %</p>
                                 <p>Pressione: {{ $weather_day->pressure }} mb</p>
                             </div>
                             </div>

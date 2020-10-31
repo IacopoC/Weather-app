@@ -23,6 +23,10 @@ body {
     margin-bottom:130px;
 }
 
+.h-350 {
+    height:350px;
+}
+
 .dropdown-item:hover {
     background-color:black;
 }
