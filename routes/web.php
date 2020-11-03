@@ -15,8 +15,6 @@ Auth::routes();
 
 Route::get('/', 'GeneralController@searched');
 
-Route::get('/forecast', 'GeneralController@forecast');
-
 Route::get('/search', 'GeneralController@search');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -16,7 +16,7 @@
                             @if(empty($user->address) and empty($user->hometown))
                                 <p class="lead text-white">Completa il profilo inserendo un indirizzo di una località</p>
                             @else
-                                <p class="lead mb-3 ml-1 text-white">Utente</p>
+                                <p class="lead mb-3 ml-1 text-white">Profilo utente</p>
                             @endif
                         </div>
                         <div class="col-md-5">

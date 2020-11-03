@@ -13,12 +13,6 @@ class GeneralController extends Controller
     }
 
 
-    public function forecast()
-    {
-        $weather_data = $this->basetype->getDefaultWeather();
-        return view('forecast', compact( 'weather_data'));
-    }
-
     public function searched()
     {
         if (Auth::check()) {
