@@ -1,15 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use App\Location;
 
 class UserController extends Controller
 {
-    public function __construct(BaseType $basetype)
-    {
-        $this->basetype = $basetype;
-    }
 
     public function show()
     {
@@ -21,5 +18,5 @@ class UserController extends Controller
             return view('welcome');
         }
     }
-    
+
 }

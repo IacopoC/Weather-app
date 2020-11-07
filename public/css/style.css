@@ -83,6 +83,7 @@ button.ap-input-icon.ap-icon-pin {
 }
 
 #video-weather {
+    display:none;
     position: absolute;
     top: 0;
     left: 50%;
@@ -95,7 +96,12 @@ button.ap-input-icon.ap-icon-pin {
 
 
 @media (min-width: 62em) {
+
     .featurette-heading {
         margin-top: 7rem;
+    }
+
+    #video-weather {
+        display:block;
     }
 }

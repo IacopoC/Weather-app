@@ -6,7 +6,7 @@
 
     @section('content')
     <!-- Header -->
-    <header class="py-5 mb-5">
+    <header class="py-5 mb-5 bg-secondary">
         <video autoplay muted loop id="video-weather">
             <source src="{{ asset('video/weather.mp4') }}" type="video/mp4">
             Your browser does not support HTML5 video.
@@ -17,7 +17,7 @@
                     <div class="row">
                     <div class="col-md-7">
                     <h1 class="display-4 text-white mt-5 mb-2">Benvenuto in Weather app</h1>
-                    <p class="lead mb-5 text-white">Scopri il tempo nella tua località</p>
+                    <p class="lead mb-5 text-white">@if(Auth::check()) <strong>{{ Auth::user()->name . ' , scopri' }} </strong> @else {{ 'Scopri' }} @endif il tempo nella tua località</p>
                     </div>
                     <div class="col-md-5">
                     <div class="text-right pt-5 pr-5">
