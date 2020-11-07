@@ -13,14 +13,14 @@
 
 Auth::routes();
 
-Route::get('/', 'GeneralController@searched');
+Route::get('/', 'UserController@show');
 
-Route::get('/search', 'GeneralController@search');
+Route::get('/search', 'GeneralController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/home', 'HomeController@updateUser');
+Route::post('/home', 'HomeController@update');
 
-Route::get('/history', 'HomeController@history')->name('history');
+Route::get('/history', 'HomeController@show')->name('history');
 
-Route::post('/history', 'HomeController@deleteHistory');
+Route::post('/history', 'HomeController@destroy');

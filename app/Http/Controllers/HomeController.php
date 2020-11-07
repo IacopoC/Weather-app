@@ -14,6 +14,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,12 +25,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
     public function index()
     {
         return view('home' , array('user'=>Auth::user()));
     }
 
-    public function updateUser()
+    public function update()
     {
         if (Auth::check()) {
             $id = Auth::user()->id;
@@ -56,7 +58,7 @@ class HomeController extends Controller
 
     }
 
-    public function history()
+    public function show()
     {
         $id = Auth::user()->id;
         $locations = Location::where('user_id', $id)->orderBy('created_at', 'desc')->simplePaginate(15);
@@ -64,7 +66,7 @@ class HomeController extends Controller
         return view('history' , array('user'=>Auth::user()) , compact('locations'));
     }
 
-    public function deleteHistory(Request $request)
+    public function destroy(Request $request)
     {
         $location_id = $request->input("location_id");
         Location::where('id',"=",$location_id)->delete();
