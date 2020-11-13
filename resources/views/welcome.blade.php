@@ -1,7 +1,7 @@
 @extends('layout-search')
 
     @section('title')
-    Homepage - Weather app
+    Home - Weather app
     @endsection
 
     @section('content')

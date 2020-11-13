@@ -2,7 +2,7 @@
 @extends('layout')
 
 @section('title')
-    Area utente {{ $user->name }} - Weather app
+    Profilo {{ $user->name }} - Weather app
 @endsection
 
 @section('content')
