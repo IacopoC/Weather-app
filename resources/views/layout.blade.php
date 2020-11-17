@@ -10,6 +10,8 @@
 
     @include('layouts.footer')
 
+    @include('layouts.to-top')
+
     @include('layouts.scripts')
 
     </body>

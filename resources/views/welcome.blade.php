@@ -6,11 +6,7 @@
 
     @section('content')
     <!-- Header -->
-    <header class="py-5 mb-5 bg-secondary">
-        <video autoplay muted loop id="video-weather">
-            <source src="{{ asset('video/weather.mp4') }}" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
+    <header class="py-5 mb-5 bg-primary">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
