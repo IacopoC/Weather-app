@@ -5,8 +5,7 @@ function timeConverter(unixTimestamp) {
     let year = a.getFullYear();
     let month = months[a.getMonth()];
     let date = a.getDate();
-    let time = date + ' ' + month + ' ' + year;
-    return time;
+    return date + ' ' + month + ' ' + year;
 }
 
 document.addEventListener('DOMContentLoaded',function() {
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded',function() {
                 })
 
                 .then(location_data => {
-                    console.log(location_data);
+
                     let {compound_code} = location_data.plus_code;
                     let compound_short = compound_code.slice(7);
 
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded',function() {
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data);
+
                     const {temperature,summary,icon,time} = data.currently;
 
                     setIcons(icon, document.getElementsByClassName("icon1")[0]);
