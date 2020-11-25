@@ -6,7 +6,11 @@
 
 @section('content')
     <!-- Header -->
+    @if($weather_results->currently->summary == 'Sereno'):
     <header class="bg-primary py-5 mb-5 gradient-secondary">
+        @else
+        <header class="bg-primary py-5 mb-5 gradient-primary">
+     @endif
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
@@ -28,34 +32,34 @@
                 </div>
                 <div class="mt-4 mb-4">
                     <div class="p-4">
-                        <h3> Il tempo adesso</h3>
+                        <h2> Il tempo adesso</h2>
                         <canvas class="{{ $weather_results->currently->icon }}" width="64" height="64"></canvas>
-                        <p class="pt-2"><strong>{{ $weather_results->currently->summary }}</strong></p>
+                        <p class="font-weight-bold pt-2">{{ $weather_results->currently->summary }}</p>
                         <div class="row">
                             <div class="col-md-6 pt-2">
-                                <div class="bg-light p-3">
-                                <p>Pioggia: {{ $weather_results->currently->precipProbability }} %</p>
-                                <p>Temperatura: {{ $weather_results->currently->temperature }} C°</p>
-                                <p>Temperatura percepita: {{ $weather_results->currently->apparentTemperature }} C°</p>
+                                <div class="pt-3 pb-3">
+                                <h5>Pioggia: {{ $weather_results->currently->precipProbability }} %</h5>
+                                <h5>Temperatura: {{ $weather_results->currently->temperature }} C°</h5>
+                                <h5>Temperatura percepita: {{ $weather_results->currently->apparentTemperature }} C°</h5>
                             </div>
                             </div>
                             <div class="col-md-6 pt-2">
-                                <div class="bg-light p-3">
-                                <p>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</p>
-                                <p>Pressione: {{ $weather_results->currently->pressure }} mb</p>
-                                <p>Vento: {{ $weather_results->currently->windSpeed }} km/h</p>
+                                <div class="pt-3 pb-3">
+                                <h5>Umidità: {{ substr($weather_results->currently->humidity,2) }} %</h5>
+                                <h5>Pressione: {{ $weather_results->currently->pressure }} mb</h5>
+                                <h5>Vento: {{ $weather_results->currently->windSpeed }} km/h</h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="p-4">
-                    <h3>Il tempo della settimana</h3>
-                    <p>{{ $weather_results->daily->summary }}</p>
+                    <h2>Il tempo della settimana</h2>
+                    <p class="font-weight-bold">{{ $weather_results->daily->summary }}</p>
                     <div class="row">
                     @foreach($weather_results->daily->data as $weather_day)
                             <div class="col-md-3 pt-4">
-                                <div class="bg-light p-3 h-350">
+                                <div class="pt-3 pb-3 pr-3 h-350">
                         <p class="pb-2"><strong>{{ gmdate("d-m-Y", $weather_day->time) }}</strong></p>
                                 <canvas class="{{ $weather_day->icon }}" width="64" height="64"></canvas>
                                     <p><strong>{{ $weather_day->summary }}</strong></p>
