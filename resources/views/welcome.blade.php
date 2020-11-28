@@ -46,7 +46,7 @@
             </div>
             @foreach($searched as $search)
                 <div class="col-md-4">
-                    <a class="text-dark" href="/search?q={{ $search->location }}"><p class="lead">{{ $search->location }}</p></a>
+                    <p class="lead">{{ $search->location }}</p>
                 </div>
                 @endforeach
         </div>

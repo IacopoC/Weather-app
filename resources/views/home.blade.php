@@ -54,7 +54,7 @@
               <p>{{ $user->hometown }}
              @endif
              @if(!empty($user->province))
-               , {{ $user->province }}</p>
+                {{ $user->province }}</p>
              @endif
         </div>
         <div class="col-md-12 pt-4 pb-4">
