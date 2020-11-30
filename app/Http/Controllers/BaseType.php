@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\weatherapi\WeatherApi;
 
-use Illuminate\Support\Facades\Input;
 
 class BaseType extends Controller
 {
@@ -14,7 +13,6 @@ class BaseType extends Controller
 
     public function __construct()
     {
-
         $this->api_key = env('WEATHER_DATABASE_KEY');
         $this->service = new WeatherApi();
     }

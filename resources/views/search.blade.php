@@ -77,21 +77,20 @@
         <!-- /.row -->
             @if(!empty($weather_results->alerts))
             <div class="col-md-12">
-                <div class="row">
                     <div class="p-4">
                         <h2 class="pb-3">Allerte meteo</h2>
                             @foreach($weather_results->alerts as $weather_alerts)
+                            <div class="alert alert-warning" role="alert">
                                 <p class="font-weight-bold">{{ $weather_alerts->title }}</p>
                                 <p class="font-weight-bold">{{ $weather_alerts->description }}</p>
+                            </div>
                              @endforeach
                         </div>
-                    </div>
             </div>
                 @endif
             @else
             <p>Risultati non disponibili per il termine cercato</p>
     @endif
-
     </div>
     <!-- /.container -->
 @endsection
