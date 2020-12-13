@@ -16,8 +16,9 @@
                     <p class="lead mb-5 text-white">@if(Auth::check()) <strong>{{ Auth::user()->name . ' , scopri' }} </strong> @else {{ 'Scopri' }} @endif il tempo nella tua località</p>
                     </div>
                     <div class="col-md-5">
-                    <div class="text-right pt-5 pr-5">
+                    <div class="text-md-right pt-5 pr-md-5">
                         <div class="pt-3">
+                            <div id="loader" class="text-white"><p>Caricamento...</p></div>
                             <div class="icons">
                                 <canvas class="icon1" height="60" width="60"></canvas>
                             </div>

@@ -8,6 +8,11 @@ function timeConverter(unixTimestamp) {
     return date + ' ' + month + ' ' + year;
 }
 
+function hideLoader() {
+  let hideLoader = document.getElementById('loader');
+  hideLoader.classList.add('d-none');
+}
+
 document.addEventListener('DOMContentLoaded',function() {
     let long;
     let lat;
@@ -27,6 +32,8 @@ document.addEventListener('DOMContentLoaded',function() {
             const proxy = `https://cors-anywhere.herokuapp.com/`;
             const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${lat},${long}?units=si&lang=it`;
             const api_location = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${location_key}`;
+
+            hideLoader();
 
             fetch(api_location)
                 .then(response => {
