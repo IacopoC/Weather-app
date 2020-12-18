@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::get('/', 'UserController@show');
+Route::get('/', 'UserController@index');
 
 Route::get('/search', 'GeneralController@index');
 
@@ -21,6 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/home', 'HomeController@update');
 
-Route::get('/history', 'HomeController@show')->name('history');
+Route::get('/history', 'HistoryController@index')->name('history');
 
-Route::post('/history', 'HomeController@destroy');
+Route::post('/history', 'HistoryController@destroy');

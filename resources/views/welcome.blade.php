@@ -18,7 +18,9 @@
                     <div class="col-md-5">
                     <div class="text-md-right pt-5 pr-md-5">
                         <div class="pt-3">
-                            <div id="loader" class="text-white"><p>Caricamento...</p></div>
+                            <div id="loader" class="spinner-grow text-light" role="status">
+                                <span class="sr-only">Caricamento...</span>
+                            </div>
                             <div class="icons">
                                 <canvas class="icon1" height="60" width="60"></canvas>
                             </div>

@@ -36,6 +36,7 @@ class HomeController extends Controller
         if (Auth::check()) {
             $id = Auth::user()->id;
         }
+
         $user = User::find($id);
 
         $this->validate(request(), [
@@ -58,20 +59,4 @@ class HomeController extends Controller
 
     }
 
-    public function show()
-    {
-        $id = Auth::user()->id;
-        $locations = Location::where('user_id', $id)->orderBy('created_at', 'desc')->simplePaginate(15);
-
-        return view('history' , array('user'=>Auth::user()) , compact('locations'));
-    }
-
-    public function destroy(Request $request)
-    {
-        $location_id = $request->input("location_id");
-        Location::where('id',"=",$location_id)->delete();
-
-        return redirect()->route('history');
-
-    }
 }

@@ -8,7 +8,7 @@ use App\Location;
 class UserController extends Controller
 {
 
-    public function show()
+    public function index()
     {
         if (Auth::check()) {
             $id = Auth::user()->id;
