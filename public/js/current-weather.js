@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
             const api_key = weather_api_key;
             const location_key = google_location_key;
-            const proxy = `https://cors-anywhere.herokuapp.com/`;
-            const api = `${proxy}https://api.darksky.net/forecast/${api_key}/${lat},${long}?units=si&lang=it`;
+            const api = `https://api.darksky.net/forecast/${api_key}/${lat},${long}?units=si&lang=it`;
             const api_location = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${location_key}`;
 
             hideLoader();
